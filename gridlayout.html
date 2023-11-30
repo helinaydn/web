@@ -1,0 +1,48 @@
+<div class="container">
+
+<div class="box">Kapak</div>
+<div class="box">İçindekiler</div>
+<div class="box">Önsöz</div>
+<div class="box">Bölüm1</div>
+<div class="box">Bölüm2</div>
+<div class="box">Login</div>
+
+</div>
+<style type="text/css">
+.container{
+  
+  width:100%;
+  height: auto;
+  background: black;
+  
+  display: flex;
+  flex-direction:row;
+  justify-content:space-around;
+  flex-flow:wrap;
+}
+
+.box{
+  width:100px;
+  height: 100px;
+  background: purple;
+  margin:20px;
+  box-sizing:border-box;
+  font-size:15px;
+  
+}
+@media screen and (max-width:1200px){
+  
+  .box{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width:600px){
+  
+  .box{
+    width: 90%;
+  }
+}
+
+
+</style>
