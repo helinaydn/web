@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .square-rotate {
+      width: 50px;
+      height: 50px;
+      background-color: #2ecc71;
+      animation: rotate 2s linear infinite;
+      margin-right: 20px;
+    }
+
+    .circle-bounce {
+      width: 50px;
+      height: 50px;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      animation: bounce 1s ease-in-out infinite alternate;
+      margin-right: 20px;
+    }
+
+    .circle-slide {
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      animation: slide 2s linear infinite alternate;
+      margin-right: 20px;
+    }
+
+    .circle-fade {
+      width: 50px;
+      height: 50px;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      animation: fade 2s linear infinite;
+      margin-right: 20px;
+    }
+
+    .circle-grow-shrink {
+      width: 50px;
+      height: 50px;
+      background-color: #f39c12;
+      border-radius: 50%;
+      animation: growShrink 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100px);
+      }
+    }
+
+    @keyframes fade {
+      0% {
+        background-color: #e74c3c;
+      }
+      100% {
+        background-color: #e74c3c00; /* Son iki hane alpha (saydamlık) değerini temsil eder */
+      }
+    }
+
+    @keyframes growShrink {
+      0% {
+        transform: scale(1);
+        background-color: #f39c12;
+      }
+      50% {
+        transform: scale(1.5);
+        background-color: #f39c12;
+      }
+      100% {
+        transform: scale(1);
+        background-color: #f39c12;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="square-rotate"></div>
+    <div class="circle-bounce"></div>
+    <div class="circle-slide"></div>
+    <div class="circle-fade"></div>
+    <div class="circle-grow-shrink"></div>
+  </div>
+</body>
+</html>
