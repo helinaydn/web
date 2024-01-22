@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas ile 10x10 Kare Çizimi</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            var squareSize = canvas.width / 10;
+            var gap = 5; // Kareler arasındaki boşluk
+
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    var color = getRandomColor();
+                    context.fillStyle = color;
+                    context.fillRect(j * (squareSize + gap), i * (squareSize + gap), squareSize, squareSize);
+                }
+            }
+
+            // Rastgele renk üreten fonksiyon
+            function getRandomColor() {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                return 'rgb(' + r + ',' + g + ',' + b + ')';
+            }
+        });
+    </script>
+</body>
+</html>
