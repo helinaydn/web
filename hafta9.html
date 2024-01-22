@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+       
+        img {
+            display:block;
+            margin: 10px auto;
+       
+        }
+        resimler{
+          width:30px;
+    height:30px;
+        }
+        
+    </style>
+</head>
+<body>
+<center>
+
+ <img src="lol.jpeg"  id="resim">
+        <br>
+        <button type="button" id="Gizle">Gizle</button>
+        <button type="button" onclick="resimgoster();">Göster</button>
+ 
+
+
+      
+  
+    <img id="randomImage" src="" alt="Rastgele Resim" width=300px
+    height=300px>
+
+    <script>
+    
+    var Gizle = document.querySelector("#Gizle");
+    var resim = document.querySelector("#resim"); 
+    
+    Gizle.addEventListener("click",resimGizle);
+    function resimGizle(){
+    resim.style.display="none";
+    }
+    
+    function resimgoster(){
+    resim.style.display= "block";
+    }
+           
+        var resimler = [
+            'amumu.jpeg',
+            'jin.jpeg',
+            'jinx.jpeg',
+            'kayn.jpeg',
+            'shaco.jpeg',
+            'ekko.jpeg',
+            'katarina.jpeg',
+            'teemo.jpeg',
+            'draven.jpeg',
+            'veigar.jpeg'
+        ];
+
+       
+        function rastgeleRenk() {
+            var r = Math.floor(Math.random() * 256);
+             var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+           
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+
+       
+        function rastgeleResimVeRenkGoster() {
+          
+            var randomIndex = Math.floor(Math.random() * resimler.length);
+            var randomImage = resimler[randomIndex];
+
+          
+            document.getElementById('randomImage').src = randomImage;
+
+            
+            document.body.style.backgroundColor = rastgeleRenk();
+        }
+
+        
+        window.onload = rastgeleResimVeRenkGoster;
+        
+       
+    </script>
+    </center>
+</body>
+</html>
