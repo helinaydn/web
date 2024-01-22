@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="ntf-8">
+</head>
+<body>
+<section class="duyuru" id="duyuru">
+  <div>
+  <a href="#duyuru">X</a>
+  <img src="duyuru.jpeg"/>
+  <h2>Dikkat! Bağımlılık içerir!</h2>
+  
+  </div>
+</section>
+<style>
+section.duyuru{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.8);
+    z-index:9999;
+    animation: duyuruKapat 5s 1;
+    visibility:hidden;
+  }
+  section.duyuru div{
+    background:white;
+    padding:1em;
+   position:relative;
+  }
+  section.duyuru div img{
+    width:100%;
+  }
+  section.duyuru div a{
+    position:absolute;
+    top:-20px;
+    right:-20px;
+    display:block;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    text-decoration:none;
+    background:black;
+    color:white;
+    border-radius:20px;
+    font-weight:bolder;
+  }
+  section:target{
+    animation:none;
+    visibility:hidden;
+  }
+  
+  @keyframes duyuruKapat{
+    0% {opacity:1; visibility:visible;}
+    80% {opacity:1; visibility:visible;}
+    100% {opacity:0; visibility:hidden;}
+  }
+  
+  
+ </style>
